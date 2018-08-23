@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  oa_id: 
+  code: 
+  name: 
+  continent: 
+  wikipedia_link: 
+  keywords: MyString
+
+two:
+  oa_id: 
+  code: 
+  name: 
+  continent: 
+  wikipedia_link: 
+  keywords: MyString

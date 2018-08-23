@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Oa:</strong>
+  <%= @country.oa_id %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @country.code %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @country.name %>
+</p>
+
+<p>
+  <strong>Continent:</strong>
+  <%= @country.continent %>
+</p>
+
+<p>
+  <strong>Wikipedia link:</strong>
+  <%= @country.wikipedia_link %>
+</p>
+
+<p>
+  <strong>Keywords:</strong>
+  <%= @country.keywords %>
+</p>
+
+<%= link_to 'Edit', edit_country_path(@country) %> |
+<%= link_to 'Back', countries_path %>

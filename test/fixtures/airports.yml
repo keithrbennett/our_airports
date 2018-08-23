@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  oa_id: 
+  ident: 
+  type: 
+  name: 
+  lat: 
+  long: 
+  elevation_ft: 
+  continent: 
+  iso_country: 
+  iso_region: 
+  municipality: 
+  scheduled_service: 
+  gps_code: 
+  iata_code: 
+  home_link: 
+  wikipedia_link: 
+  keywords: MyString
+
+two:
+  oa_id: 
+  ident: 
+  type: 
+  name: 
+  lat: 
+  long: 
+  elevation_ft: 
+  continent: 
+  iso_country: 
+  iso_region: 
+  municipality: 
+  scheduled_service: 
+  gps_code: 
+  iata_code: 
+  home_link: 
+  wikipedia_link: 
+  keywords: MyString

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Oa:</strong>
+  <%= @region.oa_id %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @region.code %>
+</p>
+
+<p>
+  <strong>Local code:</strong>
+  <%= @region.local_code %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @region.name %>
+</p>
+
+<p>
+  <strong>Continent:</strong>
+  <%= @region.continent %>
+</p>
+
+<p>
+  <strong>Iso country:</strong>
+  <%= @region.iso_country %>
+</p>
+
+<p>
+  <strong>Wikipedia link:</strong>
+  <%= @region.wikipedia_link %>
+</p>
+
+<p>
+  <strong>Keywords:</strong>
+  <%= @region.keywords %>
+</p>
+
+<%= link_to 'Edit', edit_region_path(@region) %> |
+<%= link_to 'Back', regions_path %>

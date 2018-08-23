@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  oa_id: 
+  code: 
+  local_code: 
+  name: 
+  continent: 
+  iso_country: 
+  wikipedia_link: 
+  keywords: MyString
+
+two:
+  oa_id: 
+  code: 
+  local_code: 
+  name: 
+  continent: 
+  iso_country: 
+  wikipedia_link: 
+  keywords: MyString
