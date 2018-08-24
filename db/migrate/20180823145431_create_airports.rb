@@ -3,7 +3,7 @@ class CreateAirports < ActiveRecord::Migration[5.2]
     create_table :airports do |t|
       t.string :oa_id
       t.string :ident
-      t.string :type
+      t.string :airport_type
       t.string :name
       t.decimal :lat
       t.decimal :long
