@@ -10,6 +10,7 @@ def yaml_filespec(basename)
   File.expand_path(File.join(File.dirname(__FILE__), '..', 'seed_data', "#{basename}.yaml"))
 end
 
+
 hashes = YAML.load_file(yaml_filespec('countries'))
 hashes.each do |h|
   Country.from_source_hash(h).save
@@ -20,6 +21,7 @@ hashes = YAML.load_file(yaml_filespec('regions'))
 hashes.each do |h|
   Region.from_source_hash(h).save
 end
+
 
 hashes = YAML.load_file(yaml_filespec('airports'))
 hashes.each do |h|

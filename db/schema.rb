@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2018_08_23_145431) do
   create_table "airports", force: :cascade do |t|
     t.string "oa_id"
     t.string "ident"
-    t.string "type"
+    t.string "airport_type"
     t.string "name"
     t.decimal "lat"
     t.decimal "long"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2018_08_23_145431) do
     t.boolean "scheduled_service"
     t.string "gps_code"
     t.string "iata_code"
+    t.string "local_code"
     t.string "home_link"
     t.string "wikipedia_link"
     t.string "keywords"

@@ -15,6 +15,7 @@ class CreateAirports < ActiveRecord::Migration[5.2]
       t.boolean :scheduled_service
       t.string :gps_code
       t.string :iata_code
+      t.string :local_code
       t.string :home_link
       t.string :wikipedia_link
       t.string :keywords
