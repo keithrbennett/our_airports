@@ -1,24 +1,4 @@
-# README
+# OurAirports
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This Rails application displays the airport, country, and region information provided by OurAirports (at http://ourairports.com/data/).
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
