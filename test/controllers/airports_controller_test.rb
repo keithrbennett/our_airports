@@ -17,7 +17,7 @@ class AirportsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create airport" do
     assert_difference('Airport.count') do
-      post airports_url, params: { airport: { continent: @airport.continent, elevation_ft: @airport.elevation_ft, gps_code: @airport.gps_code, home_link: @airport.home_link, iata_code: @airport.iata_code, ident: @airport.ident, iso_country: @airport.iso_country, iso_region: @airport.iso_region, keywords: @airport.keywords, lat: @airport.lat, long: @airport.long, municipality: @airport.municipality, name: @airport.name, oa_id: @airport.oa_id, scheduled_service: @airport.scheduled_service, type: @airport.type, wikipedia_link: @airport.wikipedia_link } }
+      post airports_url, params: { airport: { continent: @airport.continent, elevation_ft: @airport.elevation_ft, gps_code: @airport.gps_code, home_link: @airport.home_link, iata_code: @airport.iata_code, ident: @airport.ident, iso_country: @airport.iso_country, iso_region: @airport.iso_region, keywords: @airport.keywords, lat: @airport.lat, long: @airport.long, municipality: @airport.municipality, name: @airport.name, oa_id: @airport.oa_id, scheduled_service: @airport.scheduled_service, type: @airport.airport_type, wikipedia_link: @airport.wikipedia_link } }
     end
 
     assert_redirected_to airport_url(Airport.last)
@@ -34,7 +34,7 @@ class AirportsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update airport" do
-    patch airport_url(@airport), params: { airport: { continent: @airport.continent, elevation_ft: @airport.elevation_ft, gps_code: @airport.gps_code, home_link: @airport.home_link, iata_code: @airport.iata_code, ident: @airport.ident, iso_country: @airport.iso_country, iso_region: @airport.iso_region, keywords: @airport.keywords, lat: @airport.lat, long: @airport.long, municipality: @airport.municipality, name: @airport.name, oa_id: @airport.oa_id, scheduled_service: @airport.scheduled_service, type: @airport.type, wikipedia_link: @airport.wikipedia_link } }
+    patch airport_url(@airport), params: { airport: { continent: @airport.continent, elevation_ft: @airport.elevation_ft, gps_code: @airport.gps_code, home_link: @airport.home_link, iata_code: @airport.iata_code, ident: @airport.ident, iso_country: @airport.iso_country, iso_region: @airport.iso_region, keywords: @airport.keywords, lat: @airport.lat, long: @airport.long, municipality: @airport.municipality, name: @airport.name, oa_id: @airport.oa_id, scheduled_service: @airport.scheduled_service, type: @airport.airport_type, wikipedia_link: @airport.wikipedia_link } }
     assert_redirected_to airport_url(@airport)
   end
 

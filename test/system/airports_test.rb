@@ -29,7 +29,7 @@ class AirportsTest < ApplicationSystemTestCase
     fill_in "Name", with: @airport.name
     fill_in "Oa", with: @airport.oa_id
     fill_in "Scheduled Service", with: @airport.scheduled_service
-    fill_in "Type", with: @airport.type
+    fill_in "Type", with: @airport.airport_type
     fill_in "Wikipedia Link", with: @airport.wikipedia_link
     click_on "Create Airport"
 
@@ -56,7 +56,7 @@ class AirportsTest < ApplicationSystemTestCase
     fill_in "Name", with: @airport.name
     fill_in "Oa", with: @airport.oa_id
     fill_in "Scheduled Service", with: @airport.scheduled_service
-    fill_in "Type", with: @airport.type
+    fill_in "Type", with: @airport.airport_type
     fill_in "Wikipedia Link", with: @airport.wikipedia_link
     click_on "Update Airport"
 
