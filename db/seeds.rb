@@ -24,6 +24,6 @@ end
 
 
 hashes = YAML.load_file(yaml_filespec('airports'))
-hashes.each do |h|
+hashes.select { |h| h['type'] == 'large_airport' }.each do |h|
   Airport.from_source_hash(h).save
 end
