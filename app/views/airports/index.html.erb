@@ -10,8 +10,9 @@
 <!--      <th>Ident</th>-->
 <!--      <th>Type</th>-->
       <th>Name</th>
-      <th>Lat</th>
-      <th>Long</th>
+      <th>Map</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
       <th>Elevation (ft)</th>
 <!--      <th>Continent</th>-->
       <th>Country</th>
@@ -34,6 +35,7 @@
 <!--        <td><%#= airport.ident %></td>-->
 <!--        <td><%#= airport.airport_type %></td>-->
         <td><%= airport.name %></td>
+        <td><a href="<%= airport.map_url %>">Map</a></td>
         <td><%= airport.lat %></td>
         <td><%= airport.long %></td>
         <td><%= airport.elevation_ft %></td>

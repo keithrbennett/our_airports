@@ -50,7 +50,12 @@ class Airport < ApplicationRecord
   end
 
 
-
+  # URL for this location on Google Maps. The map is of the lat/long coordinates only so
+  # the airport might not be labelled. In addition, because we are not searching for the
+  # place name, we need to zoom in quite a bit to guarantee that the airport is visible.
+  def map_url
+    "https://www.google.com/maps/@?api=1&map_action=map&zoom=14&center=#{lat},#{long}"
+  end
 end
 
 
