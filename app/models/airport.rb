@@ -55,6 +55,11 @@ class Airport < ApplicationRecord
   end
 
 
+  def has_home_link?
+    home_link && home_link.size > 0
+  end
+
+
   # URL for this location on Google Maps. The map is of the lat/long coordinates only so
   # the airport might not be labelled. In addition, because we are not searching for the
   # place name, we need to zoom in quite a bit to guarantee that the airport is visible.

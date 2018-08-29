@@ -32,6 +32,13 @@
     <% @airports.each do |airport| %>
       <tr>
 
+        <% if airport.has_home_link? %>
+          <td><a href="<%= airport.home_link %>"><%= airport.name %></a></td>
+        <% else %>
+          <td><%= airport.name %></td>
+        <% end %>
+
+
         <td><%= airport.name %></td>
 
         <% if airport.lat_long_valid? %>
