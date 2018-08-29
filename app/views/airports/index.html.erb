@@ -31,27 +31,35 @@
   <tbody>
     <% @airports.each do |airport| %>
       <tr>
-<!--        <td><%#= airport.oa_id %></td>-->
-<!--        <td><%#= airport.ident %></td>-->
-<!--        <td><%#= airport.airport_type %></td>-->
+
         <td><%= airport.name %></td>
-        <td><a href="<%= airport.map_url %>">Map</a></td>
+
+        <% if airport.lat_long_valid? %>
+          <td><a href="<%= airport.map_url %>">Map</a></td>
+        <% else %>
+          <td />
+        <% end %>
+
         <td><%= airport.lat %></td>
         <td><%= airport.long %></td>
         <td><%= airport.elevation_ft %></td>
-<!--        <td><%#= airport.continent %></td>-->
         <td><%= airport.iso_country %></td>
-<!--        <td><%#= airport.iso_region %></td>-->
-<!--        <td><%#= airport.municipality %></td>-->
-<!--        <td><%#= airport.scheduled_service %></td>-->
-<!--        <td><%#= airport.gps_code %></td>-->
-<!--        <td><%#= airport.iata_code %></td>-->
-<!--        <td><%#= airport.home_link %></td>-->
-<!--        <td><%#= airport.wikipedia_link %></td>-->
-<!--        <td><%#= airport.keywords %></td>-->
         <td><%= link_to 'Details', airport %></td>
-<!--        <td><%#= link_to 'Edit', edit_airport_path(airport) %></td>-->
-<!--        <td><%#= link_to 'Destroy', airport, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+
+        <!--        <td><%#= airport.oa_id %></td>-->
+        <!--        <td><%#= airport.ident %></td>-->
+        <!--        <td><%#= airport.airport_type %></td>-->
+        <!--        <td><%#= airport.continent %></td>-->
+        <!--        <td><%#= airport.iso_region %></td>-->
+        <!--        <td><%#= airport.municipality %></td>-->
+        <!--        <td><%#= airport.scheduled_service %></td>-->
+        <!--        <td><%#= airport.gps_code %></td>-->
+        <!--        <td><%#= airport.iata_code %></td>-->
+        <!--        <td><%#= airport.home_link %></td>-->
+        <!--        <td><%#= airport.wikipedia_link %></td>-->
+        <!--        <td><%#= airport.keywords %></td>-->
+        <!--        <td><%#= link_to 'Edit', edit_airport_path(airport) %></td>-->
+        <!--        <td><%#= link_to 'Destroy', airport, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
       </tr>
     <% end %>
   </tbody>
