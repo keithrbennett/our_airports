@@ -38,6 +38,8 @@ gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'  # for bootstrap gem
 
 gem 'kaminari'
+gem 'bootstrap4-kaminari-views'
+
 
 
 group :development, :test do
