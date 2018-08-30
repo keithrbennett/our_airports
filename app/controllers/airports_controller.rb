@@ -4,7 +4,7 @@ class AirportsController < ApplicationController
   # GET /airports
   # GET /airports.json
   def index
-    @airports = Airport.order(:name).page params[:page]
+    @airports = Airport.order(:iso_country).order(:name).page params[:page]
   end
 
   # GET /airports/1
