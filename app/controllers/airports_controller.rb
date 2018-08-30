@@ -4,7 +4,7 @@ class AirportsController < ApplicationController
   # GET /airports
   # GET /airports.json
   def index
-    @airports = Airport.paginate(:page => params[:page], :per_page => 12)
+    @airports = Airport.order(:name).page params[:page]
   end
 
   # GET /airports/1

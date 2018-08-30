@@ -37,8 +37,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'  # for bootstrap gem
 
-gem 'will_paginate'
-
+gem 'kaminari'
 
 
 group :development, :test do
