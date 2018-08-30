@@ -1,10 +1,11 @@
 class AirportsController < ApplicationController
   before_action :set_airport, only: [:show, :edit, :update, :destroy]
+  helper_method :sort_column, :sort_direction
 
   # GET /airports
   # GET /airports.json
   def index
-    @airports = Airport.order(:iso_country).order(:name).page params[:page]
+    @airports = Airport.order("#{sort_column} #{sort_direction}").page params[:page]
   end
 
   # GET /airports/1
@@ -71,4 +72,18 @@ class AirportsController < ApplicationController
     def airport_params
       params.require(:airport).permit(:oa_id, :ident, :type, :name, :lat, :long, :elevation_ft, :continent, :iso_country, :iso_region, :municipality, :scheduled_service, :gps_code, :iata_code, :home_link, :wikipedia_link, :keywords)
     end
+
+  # For sortable tables, from https://richonrails.com/articles/sortable-table-columns
+  private
+  def sortable_columns
+    ["name", "iso_country"]
+  end
+
+  def sort_column
+    sortable_columns.include?(params[:column]) ? params[:column] : "name"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
 end

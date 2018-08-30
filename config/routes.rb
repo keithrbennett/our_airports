@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  resources :airports
-
+  resources :airports, only: [:index, :show]
   root to: 'airports#index'
 
   # resources :regions
