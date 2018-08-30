@@ -16,6 +16,8 @@
       <th>Elevation (ft)</th>
 <!--      <th>Continent</th>-->
       <th>Country</th>
+      <th>Wikipedia</th>
+      <th>Details</th>
 <!--      <th>Iso region</th>-->
 <!--      <th>Municipality</th>-->
 <!--      <th>Scheduled service</th>-->
@@ -38,19 +40,23 @@
           <td><%= airport.name %></td>
         <% end %>
 
-
-        <td><%= airport.name %></td>
-
         <% if airport.lat_long_valid? %>
           <td><a href="<%= airport.map_url %>">Map</a></td>
         <% else %>
           <td />
         <% end %>
 
-        <td><%= airport.lat %></td>
-        <td><%= airport.long %></td>
+        <td><%= airport.lat.round(6) %></td>
+        <td><%= airport.long.round(6) %></td>
         <td><%= airport.elevation_ft %></td>
         <td><%= airport.iso_country %></td>
+
+        <% if airport.wikipedia_link %>
+          <td><a href="<%= airport.wikipedia_link %>">Wikipedia</a></td>
+        <% else %>
+          <td></td>
+        <% end %>
+
         <td><%= link_to 'Details', airport %></td>
 
         <!--        <td><%#= airport.oa_id %></td>-->
