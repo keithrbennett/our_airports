@@ -8,6 +8,7 @@ class CountryCodeLookup
 
   def initialize
     @lookup = parse_json(JSON_DATA)
+    @lookup['XK'] = 'Kosovo'
   end
 
 
