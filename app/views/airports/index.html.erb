@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container">
-<h1>Airports</h1>
+  <h1>Airport Information from <a href="http://OurAirports.com/data">OurAirports.com</a></h1>
 
 <table class="table table-striped table-bordered">
-  <thead>
+  <thead align="center">
     <tr>
       <th style="width:22em;"><%= sort_link "name" %></th>
-      <th>Map</th>
       <th style="width:10em;"><%= sort_link 'lat', 'Latitude' %></th>
       <th style="width:10em;"><%= sort_link 'long', 'Longitude' %></th>
       <th><%= sort_link 'elevation_ft', 'Elev. (ft)' %></th>
       <th><%= sort_link 'iso_country', 'Country' %></th>
-      <th>Wikipedia</th>
-      <th>Details</th>
+      <th>Map</th>
+      <th><%= sort_link 'home_link', 'Home Page' %></th>
+      <th><%= sort_link 'wikipedia_link', 'Wikipedia' %></th>
     </tr>
   </thead>
 
@@ -21,30 +21,30 @@
     <% @airports.each do |airport| %>
       <tr>
 
-        <% if airport.has_home_link? %>
-          <td><a href="<%= airport.home_link %>"><%= airport.name %></a></td>
-        <% else %>
-          <td><%= airport.name %></td>
-        <% end %>
+        <td><%= link_to airport.name, airport %></td>
+
+        <td align="right"><%= airport.lat.round(6) %></td>
+        <td align="right"><%= airport.long.round(6) %></td>
+        <td align="right"><%= airport.elevation_ft %></td>
+        <td align="center"><%= airport.iso_country %></td>
 
         <% if airport.lat_long_valid? %>
-          <td><a href="<%= airport.map_url %>">Map</a></td>
+          <td align="center"><a href="<%= airport.map_url %>">Map</a></td>
         <% else %>
           <td />
         <% end %>
 
-        <td><%= airport.lat.round(6) %></td>
-        <td><%= airport.long.round(6) %></td>
-        <td><%= airport.elevation_ft %></td>
-        <td><%= airport.iso_country %></td>
-
-        <% if airport.wikipedia_link %>
-          <td><a href="<%= airport.wikipedia_link %>">Wikipedia</a></td>
+        <% if airport.has_home_link? %>
+          <td align="center"><a href="<%= airport.home_link %>">Home</a></td>
         <% else %>
           <td></td>
         <% end %>
 
-        <td><%= link_to 'Details', airport %></td>
+        <% if airport.wikipedia_link %>
+          <td align="center"><a href="<%= airport.wikipedia_link %>">Wikipedia</a></td>
+        <% else %>
+          <td></td>
+        <% end %>
 
         <!--        <td><%#= airport.oa_id %></td>-->
         <!--        <td><%#= airport.ident %></td>-->
