@@ -76,7 +76,7 @@ class AirportsController < ApplicationController
   # For sortable tables, from https://richonrails.com/articles/sortable-table-columns
   private
   def sortable_columns
-    ["name", "iso_country"]
+    %w(name  iso_country  lat  long  elevation_ft)
   end
 
   def sort_column
