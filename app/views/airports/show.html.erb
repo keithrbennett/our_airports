@@ -1,6 +1,8 @@
 <div class="container">
 
-  <h1><%= "#{@airport.name} (#{CountryCodeLookup.lookup(@airport.iso_country)})" %></h1>
+  <% country = CountryCodeLookup.lookup(@airport.iso_country) %>
+
+  <h1><%= @airport.name %> <small class="text-muted"><%= "  (#{country})" %></small></h1>
 
   <%
     def form_element(id, label_text, current_content, input_type = 'text_field')
