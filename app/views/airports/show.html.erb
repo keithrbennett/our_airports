@@ -1,88 +1,38 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
 
-<p>
-  <strong>Oa:</strong>
-  <%= @airport.oa_id %>
-</p>
+  <h1><%= "#{@airport.name} (#{CountryCodeLookup.lookup(@airport.iso_country)})" %></h1>
 
-<p>
-  <strong>Ident:</strong>
-  <%= @airport.ident %>
-</p>
+  <%
+    def form_element(id, label_text, current_content, input_type = 'text_field')
+    %Q{
+    <form>
+    <div class="form-group">
+      <label for="#{id}">#{label_text}</label>
+      <input type="#{input_type}" class="form-control" id="#{id}" placeholder="#{current_content}">
+    </div>
+    </form>
+    }.html_safe
+    end
+  %>
 
-<p>
-  <strong>Type:</strong>
-  <%= @airport.airport_type %>
-</p>
+    <%= form_element('ident',              'Identification',     @airport.ident) %>
+    <%= form_element('type',               'Airport Type',       @airport.airport_type) %>
+    <%= form_element('name',               'Name',               @airport.name) %>
+    <%= form_element('lat',                'Latitude',           @airport.lat) %>
+    <%= form_element('long',               'Longitude',          @airport.long) %>
+    <%= form_element('elevation_ft',       'Elevation (ft)',     @airport.elevation_ft) %>
+    <%= form_element('continent',          'Continent',          @airport.continent) %>
+    <%= form_element('iso_country',        'ISO Country Code',   @airport.iso_country) %>
+    <%= form_element('iso_region',         'ISO Region Code',    @airport.iso_region) %>
+    <%= form_element('municipality',       'Municipality',       @airport.municipality) %>
+    <%= form_element('scheduled_service',  'Scheduled Service?', @airport.scheduled_service) %>
+    <%= form_element('gps_code',           'GPS Code',           @airport.gps_code) %>
+    <%= form_element('iata_code',          'IATA Code',          @airport.iata_code) %>
+    <%= form_element('home_link',          'Home Link',          @airport.home_link) %>
+    <%= form_element('wikipedia_link',     'Wikipedia Link',     @airport.wikipedia_link) %>
+    <%= form_element('keywords',           'Keywords',           @airport.keywords) %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @airport.name %>
-</p>
-
-<p>
-  <strong>Lat:</strong>
-  <%= @airport.lat %>
-</p>
-
-<p>
-  <strong>Long:</strong>
-  <%= @airport.long %>
-</p>
-
-<p>
-  <strong>Elevation ft:</strong>
-  <%= @airport.elevation_ft %>
-</p>
-
-<p>
-  <strong>Continent:</strong>
-  <%= @airport.continent %>
-</p>
-
-<p>
-  <strong>Iso country:</strong>
-  <%= @airport.iso_country %>
-</p>
-
-<p>
-  <strong>Iso region:</strong>
-  <%= @airport.iso_region %>
-</p>
-
-<p>
-  <strong>Municipality:</strong>
-  <%= @airport.municipality %>
-</p>
-
-<p>
-  <strong>Scheduled service:</strong>
-  <%= @airport.scheduled_service %>
-</p>
-
-<p>
-  <strong>Gps code:</strong>
-  <%= @airport.gps_code %>
-</p>
-
-<p>
-  <strong>Iata code:</strong>
-  <%= @airport.iata_code %>
-</p>
-
-<p>
-  <strong>Home link:</strong>
-  <%= @airport.home_link %>
-</p>
-
-<p>
-  <strong>Wikipedia link:</strong>
-  <%= @airport.wikipedia_link %>
-</p>
-
-<p>
-  <strong>Keywords:</strong>
-  <%= @airport.keywords %>
-</p>
 
 <%= link_to 'Back', airports_path %>
+</div>
+</div>
