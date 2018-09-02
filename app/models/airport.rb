@@ -71,7 +71,7 @@ class Airport < ApplicationRecord
   # the airport might not be labelled. In addition, because we are not searching for the
   # place name, we need to zoom in quite a bit to guarantee that the airport is visible.
   # Reference: https://developers.google.com/maps/documentation/urls/guide
-  def map_url
+  def map_link
     "https://www.google.com/maps/@?api=1&map_action=map&zoom=14&center=#{lat},#{long}"
   end
 end

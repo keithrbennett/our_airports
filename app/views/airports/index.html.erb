@@ -30,7 +30,7 @@
         <td align="center" title="<%= airport.country_name %>"><%= airport.iso_country %></td>
 
         <% if airport.lat_long_valid? %>
-          <td align="center"><a href="<%= airport.map_url %>">Map</a></td>
+          <td align="center"><a href="<%= airport.map_link %>">Map</a></td>
         <% else %>
           <td />
         <% end %>

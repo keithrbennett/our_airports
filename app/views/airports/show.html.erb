@@ -41,12 +41,13 @@
     <%= form_element('long',               'Longitude',          @airport.long) %>
     <%= form_element('elevation_ft',       'Elevation (ft)',     @airport.elevation_ft) %>
     <%= form_element('continent',          'Continent',          @airport.continent) %>
-    <%= form_element('iso_country',        'ISO Country Code',   country_string) %>
+    <%= form_element('iso_country',        'Country',            country_string) %>
     <%= form_element('iso_region',         'ISO Region Code',    @airport.iso_region) %>
     <%= form_element('municipality',       'Municipality',       @airport.municipality) %>
     <%= form_element('scheduled_service',  'Scheduled Service?', @airport.scheduled_service) %>
     <%= form_element('gps_code',           'GPS Code',           @airport.gps_code) %>
     <%= form_element('iata_code',          'IATA Code',          @airport.iata_code) %>
+    <%= form_element('map_link',           'Map Link',           link_text(@airport.map_link)) %>
     <%= form_element('home_link',          'Home Link',          link_text(@airport.home_link)) %>
     <%= form_element('wikipedia_link',     'Wikipedia Link',     link_text(@airport.wikipedia_link)) %>
     <%= form_element('keywords',           'Keywords',           @airport.keywords) %>
