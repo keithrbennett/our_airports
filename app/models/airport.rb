@@ -1,3 +1,5 @@
+require 'normalize_country'
+
 class Airport < ApplicationRecord
 
 
@@ -47,6 +49,11 @@ class Airport < ApplicationRecord
         wikipedia_link:    wikipedia_link,
         keywords:          keywords
     }
+  end
+
+
+  def country_name
+    NormalizeCountry.convert(iso_country)
   end
 
 

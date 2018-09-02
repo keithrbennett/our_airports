@@ -1,6 +1,6 @@
 <div class="container">
 
-  <% country = NormalizeCountry.convert(@airport.iso_country) %>
+  <% country = @airport.country_name %>
 
   <h1><%= @airport.name %> <small class="text-muted"><%= "  (#{country})" %></small></h1>
 
