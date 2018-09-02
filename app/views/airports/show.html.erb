@@ -36,9 +36,10 @@
   <br />
 
   <dl class="row">
+    <%= form_element('iata_code',          'IATA Code',          @airport.iata_code) %>
+    <%= form_element('name',               'Name',               @airport.name) %>
     <%= form_element('ident',              'Identification',     @airport.ident) %>
     <%= form_element('type',               'Airport Type',       @airport.airport_type) %>
-    <%= form_element('name',               'Name',               @airport.name) %>
     <%= form_element('lat',                'Latitude',           @airport.lat) %>
     <%= form_element('long',               'Longitude',          @airport.long) %>
     <%= form_element('elevation_ft',       'Elevation (ft)',     @airport.elevation_ft) %>
@@ -48,7 +49,6 @@
     <%= form_element('municipality',       'Municipality',       @airport.municipality) %>
     <%= form_element('scheduled_service',  'Scheduled Service?', @airport.scheduled_service) %>
     <%= form_element('gps_code',           'GPS Code',           @airport.gps_code) %>
-    <%= form_element('iata_code',          'IATA Code',          @airport.iata_code) %>
     <%= form_element('map_link',           'Map Link',           link_text(@airport.map_link)) %>
     <%= form_element('home_link',          'Home Link',          link_text(@airport.home_link)) %>
     <%= form_element('wikipedia_link',     'Wikipedia Link',     link_text(@airport.wikipedia_link)) %>

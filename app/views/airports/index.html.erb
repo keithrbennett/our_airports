@@ -22,8 +22,7 @@
   <tbody>
     <% @airports.each do |airport| %>
       <tr>
-
-        <td align="center"><%= airport.iata_code %></td>
+        <td align="center"><%= link_to airport.iata_code, airport %></td>
         <td><%= link_to airport.name, airport %></td>
 
         <td align="right"><%= airport.lat.round(6) %></td>
@@ -40,13 +39,13 @@
         <% if airport.has_home_link? %>
           <td align="center"><%= link_to 'Home', airport.home_link, target: '_blank' %></td>
         <% else %>
-          <td></td>
+          <td />
         <% end %>
 
         <% if airport.wikipedia_link %>
           <td align="center"><%= link_to 'Wikipedia', airport.wikipedia_link, target: '_blank' %></td>
         <% else %>
-          <td></td>
+          <td />
         <% end %>
 
         <!--        <td><%#= airport.oa_id %></td>-->
