@@ -2,20 +2,23 @@
 
   <% country = @airport.country_name %>
 
+  <br />
+  <br />
   <h1><%= @airport.name %> <small class="text-muted"><%= "  (#{country})" %></small></h1>
+  <br />
+  <br />
 
   <%
-    def form_element(id, label_text, current_content, input_type = 'text_field')
-    %Q{
-    <form>
-    <div class="form-group">
-      <label for="#{id}">#{label_text}</label>
-      <input type="#{input_type}" class="form-control" id="#{id}" placeholder="#{current_content}">
-    </div>
-    </form>
-    }.html_safe
+    def form_element(id, label_text, current_content)
+      %Q{
+      <dt class="col-sm-3">#{label_text}</dt>
+      <dd class="col-sm-9">#{current_content || '[None]'}</dd>
+      }.html_safe
     end
   %>
+
+
+  <dl class="row">
 
     <%= form_element('ident',              'Identification',     @airport.ident) %>
     <%= form_element('type',               'Airport Type',       @airport.airport_type) %>
@@ -35,6 +38,12 @@
     <%= form_element('keywords',           'Keywords',           @airport.keywords) %>
 
 
-<%= link_to 'Back', airports_path %>
+
+  </dl>
+
+
+
+
+    <%= link_to 'Back', airports_path %>
 </div>
 </div>
