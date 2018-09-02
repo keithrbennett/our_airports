@@ -1,7 +1,7 @@
 <%
   def link_text(url)
     if url && url.length > 0
-      %Q{<a href="#{url}">#{url}</a>}
+      link_to url, url, target: '_blank'
     else
       nil
     end

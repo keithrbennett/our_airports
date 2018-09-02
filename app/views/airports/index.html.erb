@@ -32,19 +32,19 @@
         <td align="center" title="<%= airport.country_name %>"><%= airport.iso_country %></td>
 
         <% if airport.lat_long_valid? %>
-          <td align="center"><a href="<%= airport.map_link %>">Map</a></td>
+          <td align="center"><%= link_to 'Map', airport.map_link, target: '_blank' %></td>
         <% else %>
           <td />
         <% end %>
 
         <% if airport.has_home_link? %>
-          <td align="center"><a href="<%= airport.home_link %>">Home</a></td>
+          <td align="center"><%= link_to 'Home', airport.home_link, target: '_blank' %></td>
         <% else %>
           <td></td>
         <% end %>
 
         <% if airport.wikipedia_link %>
-          <td align="center"><a href="<%= airport.wikipedia_link %>">Wikipedia</a></td>
+          <td align="center"><%= link_to 'Wikipedia', airport.wikipedia_link, target: '_blank' %></td>
         <% else %>
           <td></td>
         <% end %>
