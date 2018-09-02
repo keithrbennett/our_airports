@@ -9,7 +9,7 @@
   <br />
 
   <%
-    def form_element(id, label_text, current_content)
+    def form_element(_id, label_text, current_content)
       %Q{
       <dt class="col-sm-3">#{label_text}</dt>
       <dd class="col-sm-9">#{current_content || '[None]'}</dd>
@@ -19,7 +19,6 @@
 
 
   <dl class="row">
-
     <%= form_element('ident',              'Identification',     @airport.ident) %>
     <%= form_element('type',               'Airport Type',       @airport.airport_type) %>
     <%= form_element('name',               'Name',               @airport.name) %>
@@ -36,14 +35,8 @@
     <%= form_element('home_link',          'Home Link',          @airport.home_link) %>
     <%= form_element('wikipedia_link',     'Wikipedia Link',     @airport.wikipedia_link) %>
     <%= form_element('keywords',           'Keywords',           @airport.keywords) %>
-
-
-
   </dl>
 
-
-
-
-    <%= link_to 'Back', airports_path %>
+    <%= link_to 'Back', :back, class: 'btn  btn-primary' %>
 </div>
 </div>
