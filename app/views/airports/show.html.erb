@@ -1,3 +1,28 @@
+<%
+  def link_text(url)
+    if url && url.length > 0
+      %Q{<a href="#{url}">#{url}</a>}
+    else
+      nil
+    end
+  end
+
+
+  def form_element(_id, label_text, current_content, is_link = false)
+    %Q{
+    <dt class="col-sm-3">#{label_text}</dt>
+    <dd class="col-sm-9">#{current_content || '[None]'}</dd>
+    }.html_safe
+  end
+
+
+  def country_string
+    em_dash = "\u2014"
+    "#{@airport.iso_country} #{em_dash} #{@airport.country_name}" # \u2014 = em dash
+  end
+%>
+
+
 <div class="container">
 
   <% country = @airport.country_name %>
@@ -8,16 +33,6 @@
   <br />
   <br />
 
-  <%
-    def form_element(_id, label_text, current_content)
-      %Q{
-      <dt class="col-sm-3">#{label_text}</dt>
-      <dd class="col-sm-9">#{current_content || '[None]'}</dd>
-      }.html_safe
-    end
-  %>
-
-
   <dl class="row">
     <%= form_element('ident',              'Identification',     @airport.ident) %>
     <%= form_element('type',               'Airport Type',       @airport.airport_type) %>
@@ -26,14 +41,14 @@
     <%= form_element('long',               'Longitude',          @airport.long) %>
     <%= form_element('elevation_ft',       'Elevation (ft)',     @airport.elevation_ft) %>
     <%= form_element('continent',          'Continent',          @airport.continent) %>
-    <%= form_element('iso_country',        'ISO Country Code',   @airport.iso_country) %>
+    <%= form_element('iso_country',        'ISO Country Code',   country_string) %>
     <%= form_element('iso_region',         'ISO Region Code',    @airport.iso_region) %>
     <%= form_element('municipality',       'Municipality',       @airport.municipality) %>
     <%= form_element('scheduled_service',  'Scheduled Service?', @airport.scheduled_service) %>
     <%= form_element('gps_code',           'GPS Code',           @airport.gps_code) %>
     <%= form_element('iata_code',          'IATA Code',          @airport.iata_code) %>
-    <%= form_element('home_link',          'Home Link',          @airport.home_link) %>
-    <%= form_element('wikipedia_link',     'Wikipedia Link',     @airport.wikipedia_link) %>
+    <%= form_element('home_link',          'Home Link',          link_text(@airport.home_link)) %>
+    <%= form_element('wikipedia_link',     'Wikipedia Link',     link_text(@airport.wikipedia_link)) %>
     <%= form_element('keywords',           'Keywords',           @airport.keywords) %>
   </dl>
 
