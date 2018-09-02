@@ -70,3 +70,7 @@ gem 'pg'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+
+# For looking up country names from 2-letter ISO 3166 country codes
+gem 'normalize_country'

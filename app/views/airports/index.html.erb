@@ -26,7 +26,7 @@
         <td align="right"><%= airport.lat.round(6) %></td>
         <td align="right"><%= airport.long.round(6) %></td>
         <td align="right"><%= airport.elevation_ft %></td>
-        <td align="center" title="<%= @country_code_lookup[airport.iso_country] %>"><%= airport.iso_country %></td>
+        <td align="center" title="<%= NormalizeCountry.convert(airport.iso_country) %>"><%= airport.iso_country %></td>
 
         <% if airport.lat_long_valid? %>
           <td align="center"><a href="<%= airport.map_url %>">Map</a></td>

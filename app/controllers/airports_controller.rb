@@ -5,7 +5,6 @@ class AirportsController < ApplicationController
   # GET /airports
   # GET /airports.json
   def index
-    @country_code_lookup = CountryCodeLookup.new
     @airports = Airport.order("#{sort_column} #{sort_direction}").page params[:page]
   end
 

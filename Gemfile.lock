@@ -131,7 +131,8 @@ GEM
     nio4r (2.3.1)
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
-    pg (1.1.0)
+    normalize_country (0.2.2)
+    pg (1.1.2)
     popper_js (1.14.3)
     public_suffix (3.0.3)
     puma (3.12.0)
@@ -167,7 +168,7 @@ GEM
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     ruby_dep (1.5.0)
-    rubyzip (1.2.1)
+    rubyzip (1.2.2)
     sass (3.5.7)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -231,6 +232,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   listen (>= 3.0.5, < 3.2)
+  normalize_country
   pg
   puma (~> 3.11)
   rails (~> 5.2.1)
@@ -247,4 +249,4 @@ RUBY VERSION
    ruby 2.5.1p57
 
 BUNDLED WITH
-   1.16.2
+   1.16.4
