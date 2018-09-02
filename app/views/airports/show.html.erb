@@ -20,16 +20,18 @@
     em_dash = "\u2014"
     "#{@airport.iso_country} #{em_dash} #{@airport.country_name}" # \u2014 = em dash
   end
+
+  def title_text
+    "#{@airport.iata_code}: #{@airport.name}"
+  end
 %>
 
 
 <div class="container">
 
-  <% country = @airport.country_name %>
-
   <br />
   <br />
-  <h1><%= @airport.name %> <small class="text-muted"><%= "  (#{country})" %></small></h1>
+  <h1><%= title_text %> <small class="text-muted"><%= "  (#{@airport.country_name})" %></small></h1>
   <br />
   <br />
 
