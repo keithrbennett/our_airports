@@ -22,7 +22,7 @@
   end
 
   def title_text
-    "#{@airport.iata_code}: #{@airport.name}"
+    @airport.iata_code ? "#{@airport.iata_code}: #{@airport.name}" : @airport.name
   end
 %>
 

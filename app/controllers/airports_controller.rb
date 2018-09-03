@@ -70,7 +70,25 @@ class AirportsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def airport_params
-      params.require(:airport).permit(:oa_id, :ident, :type, :name, :lat, :long, :elevation_ft, :continent, :iso_country, :iso_region, :municipality, :scheduled_service, :gps_code, :iata_code, :home_link, :wikipedia_link, :keywords)
+      params.require(:airport).permit(%i(
+          oa_id,
+          ident
+          type
+          name
+          lat
+          long
+          elevation_ft
+          continent
+          iso_country
+          iso_region
+          municipality
+          scheduled_service
+          gps_code
+          iata_code
+          home_link
+          wikipedia_link
+          keywords
+      ))
     end
 
   # For sortable tables, from https://richonrails.com/articles/sortable-table-columns
