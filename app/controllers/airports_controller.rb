@@ -73,7 +73,7 @@ class AirportsController < ApplicationController
       params.require(:airport).permit(%i(
           oa_id,
           ident
-          type
+          airport_type
           name
           lat
           long
