@@ -16,13 +16,19 @@
       <th>Map</th>
       <th><%= sort_link 'home_link', 'Home Page' %></th>
       <th><%= sort_link 'wikipedia_link', 'Wikipedia' %></th>
+      <th><%= sort_link 'flight_radar_24_link', 'FR 24' %></th>
     </tr>
   </thead>
 
   <tbody>
     <% @airports.each do |airport| %>
       <tr>
-        <td align="center"><%= link_to airport.iata_code, airport %></td>
+        <% if airport.iata_code %>
+          <td align="center"><%= link_to airport.iata_code, airport %></td>
+        <% else %>
+          <td />
+        <% end %>
+
         <td><%= link_to airport.name, airport %></td>
 
         <td align="right"><%= airport.lat.round(6) %></td>
@@ -48,18 +54,12 @@
           <td />
         <% end %>
 
-        <!--        <td><%#= airport.oa_id %></td>-->
-        <!--        <td><%#= airport.ident %></td>-->
-        <!--        <td><%#= airport.airport_type %></td>-->
-        <!--        <td><%#= airport.continent %></td>-->
-        <!--        <td><%#= airport.iso_region %></td>-->
-        <!--        <td><%#= airport.municipality %></td>-->
-        <!--        <td><%#= airport.scheduled_service %></td>-->
-        <!--        <td><%#= airport.gps_code %></td>-->
-        <!--        <td><%#= airport.iata_code %></td>-->
-        <!--        <td><%#= airport.home_link %></td>-->
-        <!--        <td><%#= airport.wikipedia_link %></td>-->
-        <!--        <td><%#= airport.keywords %></td>-->
+        <% if airport.flight_radar_24_link %>
+          <td align="center"><%= link_to 'FR 24', airport.flight_radar_24_link, target: '_blank' %></td>
+        <% else %>
+          <td />
+        <% end %>
+
         <!--        <td><%#= link_to 'Edit', edit_airport_path(airport) %></td>-->
         <!--        <td><%#= link_to 'Destroy', airport, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
       </tr>

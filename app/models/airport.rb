@@ -74,6 +74,17 @@ class Airport < ApplicationRecord
   def map_link
     "https://www.google.com/maps/@?api=1&map_action=map&zoom=14&center=#{lat},#{long}"
   end
+
+
+  def flight_radar_24_link
+    if iata_code
+      "https://www.flightradar24.com/airport/#{iata_code}"
+    elsif lat_long_valid?
+      "https://www.flightradar24.com/#{lat},#{long}/8"
+    else
+      nil
+    end
+  end
 end
 
 
