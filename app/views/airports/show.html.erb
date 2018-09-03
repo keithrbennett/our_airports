@@ -11,7 +11,7 @@
   def form_element(_id, label_text, current_content, is_link = false)
     %Q{
     <dt class="col-sm-3">#{label_text}</dt>
-    <dd class="col-sm-9">#{current_content || '[None]'}</dd>
+    <dd class="col-sm-9">#{current_content || '-'}</dd>
     }.html_safe
   end
 
