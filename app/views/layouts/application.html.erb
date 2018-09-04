@@ -7,8 +7,9 @@
 
 <!--    This is here to fix the problem where the Flight Radar 24 link is clicked-->
 <!--    when the server is localhost, and an HTTP 421 ("Teapot") code is returned.-->
-<!--    TODO: Look into this approach to see if there isn't a way to disable it when not needed.-->
-    <meta name="referrer" content="no-referrer" />
+    <% if Rails.env.development? %>
+      <meta name="referrer" content="no-referrer" />
+    <% end %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
