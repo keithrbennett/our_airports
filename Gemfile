@@ -74,3 +74,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # For looking up country names from 2-letter ISO 3166 country codes
 gem 'normalize_country'
+
+
+# This is to solve the problem of Heroku returning a 404 for static assets, e.g. the background image.
+# See the "Static Issues" section at https://devcenter.heroku.com/articles/ruby-support#rails-5-x-applications.
+gem 'rails_serve_static_assets'

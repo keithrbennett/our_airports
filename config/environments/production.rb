@@ -1,9 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  # To fix the problem of image files not being found on Heroku:
-  config.serve_static_assets = true
-
   # Code is not reloaded between requests.
   config.cache_classes = true
 
