@@ -4,7 +4,7 @@
   <h1>Airport Information from <a href="http://OurAirports.com/data">OurAirports.com</a></h1>
   <br />
 
-<table class="table table-striped table-bordered">
+<table class="table table-bordered">
   <thead align="center">
     <tr>
       <th style="width:8em;"><%= sort_link "iata_code" %></th>
@@ -55,7 +55,7 @@
         <% end %>
 
         <% if airport.flight_radar_24_link %>
-          <td align="center"><%= link_to 'FR 24', airport.flight_radar_24_link, target: '_blank' %></td>
+          <td align="center"><%= link_to 'FR', airport.flight_radar_24_link, target: '_blank' %></td>
         <% else %>
           <td />
         <% end %>

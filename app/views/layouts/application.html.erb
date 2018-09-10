@@ -5,12 +5,6 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-<!--    This is here to fix the problem where the Flight Radar 24 link is clicked-->
-<!--    when the server is localhost, and an HTTP 421 ("Teapot") code is returned.-->
-    <% if Rails.env.development? %>
-      <meta name="referrer" content="no-referrer" />
-    <% end %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
@@ -20,6 +14,10 @@
   </head>
 
   <body>
-    <%= yield %>
+  <div class="background-image">
+    <div class="partially-opaque-layer">
+      <%= yield %>
+    </div>
+  </div>
   </body>
 </html>
