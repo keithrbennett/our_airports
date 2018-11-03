@@ -31,8 +31,8 @@
 
         <td><%= link_to airport.name, airport %></td>
 
-        <td align="right"><%= airport.lat.round(6) %></td>
-        <td align="right"><%= airport.long.round(6) %></td>
+        <td align="right"><%= airport.lat&.round(6) %></td>
+        <td align="right"><%= airport.long&.round(6) %></td>
         <td align="right"><%= airport.elevation_ft %></td>
         <td align="center" title="<%= airport.country_name %>"><%= airport.iso_country %></td>
 

@@ -3,8 +3,8 @@
 one:
   oa_id: 
   ident: 
-  type: 
-  name: 
+  airport_type:
+  name:
   lat: 
   long: 
   elevation_ft: 
@@ -21,9 +21,9 @@ one:
 
 two:
   oa_id: 
-  ident: 
-  type: 
-  name: 
+  ident:
+  airport_type:
+  name:
   lat: 
   long: 
   elevation_ft: 
