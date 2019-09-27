@@ -243,7 +243,7 @@ DEPENDENCIES
   normalize_country
   pg
   puma (~> 3.11)
-  rails (~> 5.2.1)
+  rails (~> 5.2.2)
   rails_serve_static_assets
   sass-rails (~> 5.0)
   selenium-webdriver
