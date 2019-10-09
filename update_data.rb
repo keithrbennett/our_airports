@@ -4,6 +4,8 @@
 #
 # Fetches CSV data from ourairports.com, converts it to JSON, then writes that to seed_data directory.
 # To complete the data update in the app, recreate the data base, e.g. `rails db:setup`
+#
+# Must be run from the project root because it assumes the destination is `./seed_data`.
 
 require 'smarter_csv'
 require 'stringio'
@@ -20,15 +22,20 @@ DATA_SOURCE_URLS = {
 DATA_SOURCE_URLS.each do |filename_base, source_url|
   puts "\nDownloading #{source_url}...\n\n"
   csv_text = `curl #{source_url}`
-  hash_array = SmarterCSV.process(StringIO.new(csv_text))
+
+  print "\nConverting CSV to hash..."
+  hash_array = SmarterCSV.process(StringIO.new(csv_text), strings_as_keys: true)
+
+  print "Converting hash to YAML..."
   yaml_text = hash_array.to_yaml
 
+  print "Writing file..."
   output_filespec = File.join('seed_data', "#{filename_base}.yaml")
   File.write(output_filespec, yaml_text)
   puts "\nWrote #{hash_array.size} records to #{output_filespec}.\n\n"
 end
 
-puts 'Done'
+puts "Done.\n\n"
 
 
 
