@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: our_airports
+  database: our_airports_dev
   pool: 5
   username: kbennett
   password:
@@ -9,7 +9,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: our_airports
+  database: our_airports_test
   pool: 5
   username: kbennett
   password:
