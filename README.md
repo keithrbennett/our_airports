@@ -7,3 +7,9 @@ My hope is to make it a very convenient tool for exploring the airport informati
 The project home is on Github at https://github.com/keithrbennett/our_airports.
 
 The application can be found at https://glacial-basin-20109.herokuapp.com/.
+
+2020-05-22: In order to save Heroku charges, I am disabling this app using:
+
+```
+heroku ps:scale web=0
+```
