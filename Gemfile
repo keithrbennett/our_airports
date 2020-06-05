@@ -87,3 +87,7 @@ gem 'normalize_country'
 # This is to solve the problem of Heroku returning a 404 for static assets, e.g. the background image.
 # See the "Static Issues" section at https://devcenter.heroku.com/articles/ruby-support#rails-5-x-applications.
 gem 'rails_serve_static_assets'
+
+# For security alert:
+gem "websocket-extensions", ">= 0.1.5"
+
